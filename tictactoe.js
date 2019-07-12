@@ -28,7 +28,7 @@ function cheater(i, j)
 {
   if (turnCount == 2 && (vBoard[0][0] == 1 && vBoard[2][2] == 1 || vBoard[2][0] == 1 && vBoard[0][2] == 1) && (i == 0 && j == 2 || i == 2 && j == 0 || i == 2 && j == 2 || i == 0 && j == 0)) {return true;}
   if (turnCount == 2 && (vBoard[0][1] == 1 && vBoard[1][0] == 1) && ((i==2&&j==2)||(i==2&&j==1)||(i==1&&j==2))) {return true;}
-  if (turnCount == 2 && (vBoard[0][1] == 1 && vBoard[1][2] == 1) && ((i==0&&j==2)||(i==2&&j==1)||(i==1&&j==0))) {return true;}
+  if (turnCount == 2 && (vBoard[0][1] == 1 && vBoard[1][2] == 1) && ((i==2&&j==0)||(i==2&&j==1)||(i==1&&j==0))) {return true;}
   if (turnCount == 2 && (vBoard[1][0] == 1 && vBoard[2][1] == 1) && ((i==0&&j==2)||(i==0&&j==1)||(i==1&&j==2))) {return true;}
   if (turnCount == 2 && (vBoard[2][1] == 1 && vBoard[1][2] == 1) && ((i==0&&j==0)||(i==1&&j==0)||(i==0&&j==1))) {return true;}
  return false;}
