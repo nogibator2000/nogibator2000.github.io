@@ -105,7 +105,7 @@ class Board extends React.Component {
       status = "AI won";
       endGame = true;}
     if (calculateWinner() == 1) {
-      status = "Player won";
+      status = "You won";
       endGame = true;}
 
     return (
