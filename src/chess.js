@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import "../node_modules/video-react/dist/video-react.css";
 import { Player } from 'video-react';
 import Button from './button'
 import{Link} from "react-router-dom";
+import {theme} from './theme';
+import "../node_modules/video-react/dist/video-react.css";
+
+
 export default class Chess extends Component{
   constructor(props) {
    super(props);
@@ -16,7 +19,7 @@ export default class Chess extends Component{
  }
   render() {
     return (
-      <div className='page' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', color: this.props.theme.tc, background: this.props.theme.pc}}>
+      <div className='page' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', color: theme.tc, background: theme.pc}}>
       <h2>Screen detection chess bot</h2>
       <Player
         playsInline
@@ -24,18 +27,21 @@ export default class Chess extends Component{
         width={window.innerWidth/2}
         height={window.innerWidth/4}
         autoPlay={true}
-        poster="file/loading.mp4"
+        poster="../file/loading.mp4"
         muted={true}
-        src="file/loading.mp4"
+        src="../file/loading.mp4"
       />
       <br />
-      <h5 style={{marginRight: '150px', marginLeft: '150px', padding: '10px'}}>This chess bot can win every chess game and avoid ban because he do mistakes. Download it, open any chess site, show to it your board and press start button. It will work but only if you have windows. This bot was tested on those sites <a href='https:Lichess.org'>Lichess.org</a> and <a href='https:Chess.com'>Chess.com</a> WITH NO BAN.</h5>
-    <Link to="file/ChessBot.zip" target="_blank" download>
-      <Button width = {window.innerWidth/4} height = {window.innerWidth/16} theme={this.props.theme} color = {'#6060ff'} colorH = {'#2020cF'} name='Download .zip' />
+      <h5 style={{marginRight: '150px', marginLeft: '150px', padding: '10px'}}>This chess bot can win every chess game and avoid ban because he do mistakes.
+       Download it, open any chess site, show to it your board and press start button.
+        It will work but only if you have windows. This bot was tested on those sites <a href='https:Lichess.org'>Lichess.org</a> and <a href='https:Chess.com'>Chess.com</a> WITH NO BAN.</h5>
+    <Link to="../file/ChessBot.zip" target="_blank" download>
+      <Button width = {window.innerWidth/4} height = {window.innerWidth/16}  color = {'#6060ff'} colorH = {'#2020cF'} name='Download .zip' />
   </Link>
       <br />
-    <Button width = {window.innerWidth/4} height = {window.innerWidth/16}  theme={this.props.theme} color = {'#6060ff'} colorH = {'#2020cF'} name='How to run' click={this.toggleHow}/>
-  {this.state.showHow&&<div><br /><h4> How to run</h4> <br/> &#183; Clone the <a href="https://github.com/nogibator2000/ChessBot">project</a> or skip it and <Link to="file/ChessBot.zip" target="_blank" download> download</Link> binaries
+    <Button width = {window.innerWidth/4} height = {window.innerWidth/16}   color = {'#6060ff'} colorH = {'#2020cF'} name='How to run' click={this.toggleHow}/>
+  {this.state.showHow&&<div><br /><h4> How to run</h4> <br/> &#183; Clone the <a href="https://github.com/nogibator2000/ChessBot">project</a>
+   or skip it and <Link to="../file/ChessBot.zip" target="_blank" download> download</Link> binaries
   <br/>
 <br/>
 <pre> git clone https://github.com/nogibator2000/ChessBot</pre>
@@ -51,7 +57,7 @@ export default class Chess extends Component{
 &#183; Your bot is ready to run. Press F2 or start button to start.
 </div>}
       <br />
-    <Button width = {window.innerWidth/4} height = {window.innerWidth/16} theme={this.props.theme} color = {'#6060ff'} colorH = {'#2020cF'} name='Wiki' click={this.toggleWiki}/>
+    <Button width = {window.innerWidth/4} height = {window.innerWidth/16}  color = {'#6060ff'} colorH = {'#2020cF'} name='Wiki' click={this.toggleWiki}/>
   {this.state.showWiki&&<div><br /> <h4>Wiki</h4>
 <br/>
 Open setting file. Inside bin derictory. If there is none run app, it will be autocreated.

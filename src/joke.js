@@ -1,3 +1,4 @@
+import {theme} from './theme';
 import React from 'react';
 import './joke.css'
 import postscribe from 'postscribe';
@@ -46,7 +47,7 @@ render(){
         fontSize: '4.6px',
         border: '3px solid tomato',
         transform: scale,
-        transformOrigin: '0 0',color: this.props.theme.tc, background: this.props.theme.pc
+        transformOrigin: '0 0',color: theme.tc, background: theme.pc
 
       }}>
       <FaceBar name ={this.state.name} />
@@ -78,7 +79,7 @@ render(){
             width: this.props.wd,
             height: this.props.ht
           }}>
-<JokeBox wd = {this.props.wd} ht={this.props.ht} theme={this.props.theme} />
+<JokeBox wd = {this.props.wd} ht={this.props.ht}  />
                   </div>
         );
       }}

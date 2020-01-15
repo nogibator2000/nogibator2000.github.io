@@ -1,3 +1,4 @@
+import {theme} from './theme';
 import React, { Component } from 'react';
 import MenuItem from './menuitem'
 export default class Menu extends Component{
@@ -10,9 +11,9 @@ export default class Menu extends Component{
   }
   render() {
     return (
-      <div className="menu" style={{position: 'fixed', top:this.props.theme.hh+'px', borderLeft: this.props.theme.border, borderBottom: this.props.theme.border ,background: this.props.theme.menuBG, display: 'block', width: this.props.theme.menuWidth+'px', height: window.innerHeight-this.props.theme.hh+'px'}}>
+      <div className="menu" style={{position: 'fixed', top:theme.hh+'px', borderLeft: theme.border, borderBottom: theme.border ,background: theme.menuBG, display: 'block', width: theme.menuWidth+'px', height: window.innerHeight-theme.hh+'px'}}>
     {
-      this.props.pathes.map((p)=><MenuItem path={p} theme={this.props.theme} />)
+      this.props.pathes.map((p)=><MenuItem path={p}  />)
     }
       </div>
     );

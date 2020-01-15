@@ -5,6 +5,8 @@ import{FaTelegram} from "react-icons/fa";
 import{FaFacebookSquare} from "react-icons/fa";
 import{FiMail} from "react-icons/fi";
 import Img from 'react-image';
+import {theme} from './theme';
+
 export default class Footer extends Component{
   constructor(props) {
    super(props);
@@ -16,7 +18,7 @@ export default class Footer extends Component{
   render() {
 
     return (
-      <div className="header" style={{textAlign: 'center', color: this.props.theme.tc,background: this.props.theme.pc}}>
+      <div className="header" style={{textAlign: 'center', color: theme.tc,background: theme.pc}}>
 <br/>
 <br/>
       <p><h2>
@@ -49,11 +51,11 @@ export default class Footer extends Component{
       <span>@Artem2228</span>
       </h4></p>
       <br/>
-      <Img src="file/swamp.jpg" />
+      <Img src="../file/swamp.jpg" />
       <br/>
       {this.state.show&&<div onClick ={this.hide} style={{position: 'fixed', right: '50px', bottom: '0px'}}>
 
-      <Img src="file/shrek.gif" />
+      <Img src="../file/shrek.gif" />
 </div>}
 <br/>
 </div>
