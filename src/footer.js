@@ -16,7 +16,7 @@ export default class Footer extends Component{
     <a href='https://github.com/nogibator2000'>  <GoMarkGithub/> <span></span> </a> &nbsp;
     <a href='https://vk.com/nogibator228'>  <FaVk/> <span></span></a> &nbsp;
     <a href='mailto:nogibator2000@gmail.com'>  <FiMail/> <span></span> </a>
-    <span>&nbsp; &nbsp; &nbsp; &nbsp; v0.0.1 &nbsp;</span>
+    <span>&nbsp; &nbsp; &nbsp; &nbsp; v0.0.2 &nbsp;</span>
 </div>
     );
   }

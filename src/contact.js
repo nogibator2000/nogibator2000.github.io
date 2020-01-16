@@ -22,8 +22,13 @@ export default class Footer extends Component{
 <br/>
 <br/>
       <p><h2>
-      Contact Me
+      Contact me!
       </h2></p>
+      <br/>
+      <div >
+      <Img style={{border:'1px solid '+theme.menuBGI}} src="../file/me.png" width={this.props.wd/3} height={this.props.ht/3} />
+</div>
+      <br/>
       <br/>
       <br/>
       <p><h4>
@@ -51,13 +56,7 @@ export default class Footer extends Component{
       <span>@Artem2228</span>
       </h4></p>
       <br/>
-      <Img src="../file/swamp.jpg" />
-      <br/>
-      {this.state.show&&<div onClick ={this.hide} style={{cursor:'pointer', position: 'fixed', right: '50px', bottom: '0px'}}>
 
-      <Img src="../file/shrek.gif" />
-</div>}
-<br/>
 </div>
     );
   }
