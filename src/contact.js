@@ -53,7 +53,7 @@ export default class Footer extends Component{
       <br/>
       <Img src="../file/swamp.jpg" />
       <br/>
-      {this.state.show&&<div onClick ={this.hide} style={{position: 'fixed', right: '50px', bottom: '0px'}}>
+      {this.state.show&&<div onClick ={this.hide} style={{cursor:'pointer', position: 'fixed', right: '50px', bottom: '0px'}}>
 
       <Img src="../file/shrek.gif" />
 </div>}
