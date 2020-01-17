@@ -88,16 +88,6 @@
   }
 }
 
-.canvas {
-  position: relative;
-  border: '4px solid red';
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  padding: 10em;
-}
-
 .canvas #joke {
   text-align: center;
   font-size: 8em;

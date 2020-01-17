@@ -11,7 +11,9 @@ export default class Menu extends Component{
   }
   render() {
     return (
-      <div className="menu" style={{position: 'fixed', top:theme.hh+'px', borderLeft: theme.border, borderBottom: theme.border ,background: theme.menuBG, display: 'block', width: theme.menuWidth+'px', height: window.innerHeight-theme.hh+'px'}}>
+      <div className="menu" style={{position: 'fixed', left: '1px', top:theme.hh-1+'px', borderLeft: theme.border,
+      borderBottom: theme.border ,background: theme.menuBG, display: 'block', width: theme.menuWidth+'px',
+      height: this.props.ht-theme.hh+'px'}}>
     {
       this.props.pathes.map((p)=><MenuItem path={p}  />)
     }

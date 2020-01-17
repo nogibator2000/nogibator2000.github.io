@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {theme} from './theme';
+import ScaleText from "react-scale-text";
 export default class Button extends Component{
   constructor(props) {
    super(props);
@@ -13,9 +14,14 @@ mouseLeave = () => {
 this.setState({tColor: theme.tc, color: this.props.color == null?theme.menuBGIA:this.props.color})}
   render() {
       return(<div onClick={this.props.click} onMouseIn ={this.mouseEnter} onMouseMove={this.mouseEnter} onMouseLeave={this.mouseLeave} className="Button"
-      style={{cursor:'pointer', borderRight: theme.border, background: this.state.color, display: 'flex',
-       flexDirection: 'row', margin: 'auto',alignItems: 'center' , width: this.props.width, height: this.props.height}}>
-        <h4 style={{width: '100%',textAlign: 'center', color: this.state.tColor}}>{this.props.name}</h4>
-        </div>);
+      style={{cursor:'pointer', background: this.state.color, width: this.props.width, color: this.state.tColor, height: this.props.height,
+      display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+      <ScaleText>
+       <div style={{display: 'block', textAlign: 'center', margin: '3%'}}>
+        {this.props.name}
+</div>
+</ScaleText>
+</div>
+        );
   }
 }

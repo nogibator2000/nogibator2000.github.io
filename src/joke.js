@@ -28,17 +28,18 @@ PlayEvent = (e, t) => {
 
            }
 render(){
-    let w = this.props.wd/960;
-    let h = this.props.ht/540;
+    let w = this.props.wd/(960);
+    let h = this.props.ht/(540);
     const mScale = Math.min(w,h);
     const scale = 'scale('+mScale+')';
     const lt = (this.props.wd-(960*mScale))/2+'px';
     const tp = (this.props.ht-(540*mScale))/2+'px';
-    return(
-      <div className="canvas" onClick = {(e)=>this.PlayEvent(e, 'mouse')} style={{
+    const canvas =  <div className="canvas" onClick = {(e)=>this.PlayEvent(e, 'mouse')} style={{
           position: 'absolute',
           left: lt,
           top: tp,
+          overflow: 'hidden',
+
         width: '960px',
         height: '540px',
         display: 'flex',
@@ -60,6 +61,11 @@ render(){
       <span style={{fontSize: '35px'}} id="joke">Press <span id="space">Space</span> or <span id="space">Сlick</span> for a joke.</span>
     </div>
       </div>
+
+    return(
+      <React.Fragment>
+      {canvas}
+      </React.Fragment>
     )
   }}
 
@@ -75,11 +81,8 @@ render(){
     export default class Joke extends React.Component{
       render(){
         return(
-          <div className ='page' ref={this.mainRef} style={{
-            width: this.props.wd,
-            height: this.props.ht
-          }}>
-<JokeBox wd = {this.props.wd} ht={this.props.ht}  />
-                  </div>
+          <React.Fragment>
+<JokeBox wd = {this.props.wd-theme.borderT*2} ht={this.props.ht}  />
+                </React.Fragment>
         );
       }}

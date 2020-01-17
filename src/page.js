@@ -1,34 +1,24 @@
 import React, { Component } from 'react';
 import Footer from './footer';
-import Menu from './menu';
-import Header from './header'
-import {theme} from './theme';
-import {pathes} from './pathes'
+import { Scrollbars } from 'react-custom-scrollbars';
+
 export default class Page extends Component{
-  constructor(props) {
-   super(props);
-   this.state ={showMenu: true}
- }
-    toggleMenu=()=>{
-      this.setState({showMenu: !this.state.showMenu})
-    }
+
   render() {
     let _comp = {...this.props.comp};
-    let mw = this.state.showMenu?theme.menuWidth: 0;
-    _comp.props = {..._comp.props, wd: this.props.wd-mw, ht: this.props.ht-theme.hh-theme.fh}
+    let mw = this.props.showMenu?this.props.theme.menuWidth: 0;
+    _comp.props = {..._comp.props, wd: this.props.wd-mw-1, ht: this.props.ht-this.props.theme.hh-this.props.theme.fh}
     return (
+      <Scrollbars style={{ width: this.props.wd, height: this.props.ht}}>
 <div>
-<Header  toggleMenu={this.toggleMenu} showMenu={this.state.showMenu}/>
-      <div class = 'pageWrapper' style={{width: this.props.wd-mw+'px', position: 'relative', left: this.state.showMenu?theme.menuWidth+'px':'0px', top: theme.hh+'px', borderRight: theme.border, borderLeft: theme.border}}>
-        <div class ='fullPage' style={{minHeight: this.props.ht-theme.hh-theme.fh}}>
+      <div class = 'pageWrapper' style={{width: this.props.wd-mw+'px', position: 'relative', left: this.props.showMenu?this.props.theme.menuWidth+'px':'0px', top: this.props.theme.hh+'px', borderRight: this.props.theme.border, borderLeft: this.props.theme.border}}>
+        <div class ='fullPage' style={{minHeight: this.props.ht-this.props.theme.hh-this.props.theme.fh}}>
       {_comp}
       </div>
-      <Footer />
-  </div>
-  <div className='menu'  style={{display: 'flex'}}>
-    {this.state.showMenu&&<Menu pathes={pathes}  />}
+      <Footer theme={this.props.theme}/>
   </div>
   </div>
+</Scrollbars>
 
     );
   }

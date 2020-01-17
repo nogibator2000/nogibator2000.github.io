@@ -17,9 +17,9 @@ export default class Chess extends Component{
    this.setState({showWiki: !this.state.showWiki});
  }
   render() {
-    const howBtn = <div><Button width = {window.innerWidth/4} key={this.state.showHow} height = {window.innerWidth/16}  color = {this.state.showHow?theme.menuBGIA:theme.BTMain} colorH = {this.state.showHow?theme.altColor:theme.BTMainA} name='How to run' click={this.toggleHow}/>
+    const howBtn = <div><Button width = {this.props.wd/4} key={this.state.showHow} height = {this.props.wd/16}  color = {this.state.showHow?theme.menuBGIA:theme.BTMain} colorH = {this.state.showHow?theme.altColor:theme.BTMainA} name='How to run' click={this.toggleHow}/>
     </div>;
-    const wikiBtn = <div><Button width = {window.innerWidth/4} key ={this.state.showWiki} height = {window.innerWidth/16}  color = {this.state.showWiki?theme.menuBGIA:theme.BTMain} colorH = {this.state.showWiki?theme.altColor:theme.BTMainA} name='Wiki' click={this.toggleWiki}/>
+    const wikiBtn = <div><Button width = {this.props.wd/4} key ={this.state.showWiki} height = {this.props.wd/16}  color = {this.state.showWiki?theme.menuBGIA:theme.BTMain} colorH = {this.state.showWiki?theme.altColor:theme.BTMainA} name='Wiki' click={this.toggleWiki}/>
     </div>;
     const wiki = <div><br /> <h4>Wiki</h4>
   <br/>
@@ -92,24 +92,26 @@ export default class Chess extends Component{
     &#183; Your bot is ready to run. Press F2 or start button to start.
     </div>;
     return (
-      <div className='page' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', color: theme.tc, background: theme.pc}}>
+      <div className='page' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', color: theme.tc, background: theme.pc,  padding: '5%'}}>
       <h2>Screen detection chess bot</h2>
       <Player
         playsInline
         fluid={false}
-        width={window.innerWidth/2}
-        height={window.innerWidth/4}
+        width={this.props.wd/2}
+        height={this.props.wd/3.56}
         autoPlay={true}
         poster="../file/poster.jpg"
         muted={true}
         src="../file/loading.mp4"
       />
       <br />
-      <h5 style={{marginRight: '150px', marginLeft: '150px', padding: '10px'}}>This chess bot can win every chess game and avoid ban because he do mistakes.
+      <h5>This chess bot can win every chess game and avoid ban because he do mistakes.
        Download it, open any chess site, show to it your board and press start button.
         It will work but only if you have windows. This bot was tested on those sites <a href='https:Lichess.org'>Lichess.org</a> and <a href='https:Chess.com'>Chess.com</a> WITH NO BAN.</h5>
+        <br />
+
     <Link to="../file/ChessBot.zip" target="_blank" download>
-      <Button width = {window.innerWidth/4} height = {window.innerWidth/16}  color = {theme.BTMain} colorH = {theme.BTMainA} name='Download .zip' />
+      <Button width = {this.props.wd/4} height = {this.props.wd/16}  color = {theme.BTMain} colorH = {theme.BTMainA} name='Download .zip' />
   </Link>
       <br />
       {howBtn}
