@@ -13,10 +13,15 @@ this.setState({tColor: theme.tc2, color:theme.altColor})}
 mouseLeave = () => {
 this.setState({tColor: theme.tc,color: this.setColor()})}
   render() {
-      return(<div onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave} className="menuItem" style=
-      {{display: 'flex', justifyContent: 'center', alignItems: 'center',
-      cursor:'pointer', background: this.state.color}}>
-        <Link to={this.props.path.path}><div style={{color: this.state.tColor}}>{this.props.path.name}</div></Link>
-        </div>);
+      return(
+        <React.Fragment>
+        <Link  onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave} className="menuItem" style=
+        {{position: 'relative',
+        cursor:'pointer', padding: '3%', display:'block', background: this.state.color, width: '100%', height: theme.mh, color: this.state.tColor}} to={this.props.path.path}>
+        <h4>
+        {this.props.path.name}
+        </h4>
+        </Link>
+        </React.Fragment>);
   }
 }

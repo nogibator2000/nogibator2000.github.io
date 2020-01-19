@@ -28,8 +28,8 @@ PlayEvent = (e, t) => {
 
            }
 render(){
-    let w = this.props.wd/(960);
-    let h = this.props.ht/(540);
+    let w = (this.props.wd)/(960);
+    let h = (this.props.ht)/(540);
     const mScale = Math.min(w,h);
     const scale = 'scale('+mScale+')';
     const lt = (this.props.wd-(960*mScale))/2+'px';
@@ -81,8 +81,8 @@ render(){
     export default class Joke extends React.Component{
       render(){
         return(
-          <React.Fragment>
-<JokeBox wd = {this.props.wd-theme.borderT*2} ht={this.props.ht}  />
-                </React.Fragment>
+          <div className='lol' style={{height: this.props.ht}}>
+          <JokeBox wd = {this.props.wd} ht={this.props.ht}  />
+                </div>
         );
       }}

@@ -1,23 +1,23 @@
 import {theme} from './theme';
 import React, { Component } from 'react';
-import MenuItem from './menuitem'
+import MenuItem from './menuitem';
+import {pathes} from './pathes'
 export default class Menu extends Component{
-  renderItem=(p, theme)=>{
-    let color =  p.path===window.location.pathname?theme.menuBGIA:theme.menuBGI
-    return(<div onmouseenter="Enter()" className="menuItem" style={{background: color, width: theme.menuWidth+'px'}}>
-      <a href={p.path}>{p.name}</a>
-      </div>);
-
-  }
+  constructor(props) {
+   super(props);
+   this.state ={showMenu: true}
+ }
+    toggleMenu=()=>{
+      this.setState({showMenu: !this.state.showMenu})
+    }
   render() {
     return (
-      <div className="menu" style={{position: 'fixed', left: '1px', top:theme.hh-1+'px', borderLeft: theme.border,
-      borderBottom: theme.border ,background: theme.menuBG, display: 'block', width: theme.menuWidth+'px',
-      height: this.props.ht-theme.hh+'px'}}>
-    {
-      this.props.pathes.map((p)=><MenuItem path={p}  />)
-    }
+      <div className="menu" style={{width: '100%',
+      height: '100%', borderLeft: theme.border,borderRight: theme.border,
+      borderBottom: theme.border ,background: theme.menuBG,  display: 'block', justifyContent: 'center', alignItems: 'center',
+    position: 'absolute'}}>
+        {pathes.map((p, k)=><MenuItem path={p} key={k}  />)}
       </div>
-    );
+       );
   }
 }

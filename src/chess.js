@@ -17,9 +17,9 @@ export default class Chess extends Component{
    this.setState({showWiki: !this.state.showWiki});
  }
   render() {
-    const howBtn = <div><Button width = {this.props.wd/4} key={this.state.showHow} height = {this.props.wd/16}  color = {this.state.showHow?theme.menuBGIA:theme.BTMain} colorH = {this.state.showHow?theme.altColor:theme.BTMainA} name='How to run' click={this.toggleHow}/>
+    const howBtn = <div style={{width: this.props.wd/4, height:this.props.wd/16}}><Button  key={this.state.showHow}  color = {this.state.showHow?theme.menuBGIA:theme.BTMain} colorH = {this.state.showHow?theme.altColor:theme.BTMainA} name='How to run' click={this.toggleHow}/>
     </div>;
-    const wikiBtn = <div><Button width = {this.props.wd/4} key ={this.state.showWiki} height = {this.props.wd/16}  color = {this.state.showWiki?theme.menuBGIA:theme.BTMain} colorH = {this.state.showWiki?theme.altColor:theme.BTMainA} name='Wiki' click={this.toggleWiki}/>
+    const wikiBtn = <div style={{width: this.props.wd/4, height:this.props.wd/16}}><Button key ={this.state.showWiki} color = {this.state.showWiki?theme.menuBGIA:theme.BTMain} colorH = {this.state.showWiki?theme.altColor:theme.BTMainA} name='Wiki' click={this.toggleWiki}/>
     </div>;
     const wiki = <div><br /> <h4>Wiki</h4>
   <br/>
@@ -97,8 +97,8 @@ export default class Chess extends Component{
       <Player
         playsInline
         fluid={false}
-        width={this.props.wd/2}
-        height={this.props.wd/3.56}
+        width={this.props.wd/2*1.3}
+        height={this.props.wd/3.56*1.3}
         autoPlay={true}
         poster="../file/poster.jpg"
         muted={true}
@@ -111,7 +111,9 @@ export default class Chess extends Component{
         <br />
 
     <Link to="../file/ChessBot.zip" target="_blank" download>
-      <Button width = {this.props.wd/4} height = {this.props.wd/16}  color = {theme.BTMain} colorH = {theme.BTMainA} name='Download .zip' />
+      <div style={{width: this.props.wd/4, height:this.props.wd/16}}>
+      <Button color = {theme.BTMain} colorH = {theme.BTMainA} name='Download .zip' />
+      </div>
   </Link>
       <br />
       {howBtn}

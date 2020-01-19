@@ -13,11 +13,11 @@ this.setState({tColor: theme.tc2, color: this.props.colorH == null?theme.altColo
 mouseLeave = () => {
 this.setState({tColor: theme.tc, color: this.props.color == null?theme.menuBGIA:this.props.color})}
   render() {
-      return(<div onClick={this.props.click} onMouseIn ={this.mouseEnter} onMouseMove={this.mouseEnter} onMouseLeave={this.mouseLeave} className="Button"
-      style={{cursor:'pointer', background: this.state.color, width: this.props.width, color: this.state.tColor, height: this.props.height,
+      return(<div onClick={this.props.click} onMouseEnter ={this.mouseEnter} onMouseMove={this.mouseEnter} onMouseLeave={this.mouseLeave} className="Button"
+      style={{cursor:'pointer', background: this.state.color, width: '100%', color: this.state.tColor, height: '100%',
       display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
       <ScaleText>
-       <div style={{display: 'block', textAlign: 'center', margin: '3%'}}>
+       <div style={{display: 'block', textAlign: 'center', padding: '2%'}}>
         {this.props.name}
 </div>
 </ScaleText>
