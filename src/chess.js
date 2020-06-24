@@ -116,6 +116,12 @@ export default class Chess extends Component{
       </div>
   </Link>
       <br />
+    <Link to="https://download.visualstudio.microsoft.com/download/pr/18e13f02-1a28-4fe4-b642-6674408c3673/108e75fd84bf9153ea03ed4011252f9b/dotnet-hosting-3.0.3-win.exe" target="_blank" download>
+      <div style={{width: this.props.wd/4, height:this.props.wd/16}}>
+      <Button color = {theme.BTMain} colorH = {theme.BTMainA} name='Download .net runtime' />
+      </div>
+  </Link>
+      <br />
       {howBtn}
   {this.state.showHow&&how}
       <br />
