@@ -27,7 +27,7 @@ constructor(props) {
       <Fade left when={this.state.showMenu}>
       <div className='Menu' style={{zIndex:99, position: 'fixed', width: theme.menuWidth, left: 0, height: h-theme.hh, top: theme.hh}}>
    <Menu />
-   </div>}
+   </div>
    </Fade>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <div className='Header' style={{position: 'fixed', width: w-theme.menuWidth, left: theme.menuWidth, height: theme.hh, top: 0}}>
@@ -42,7 +42,7 @@ constructor(props) {
       {_comp}
       <Footer />
       </Scrollbars>
-      </RubberBand >
+      </RubberBand>
 </div>
   </React.Fragment>
     );

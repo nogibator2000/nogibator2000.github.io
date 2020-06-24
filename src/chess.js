@@ -85,6 +85,8 @@ export default class Chess extends Component{
     <br/>
     &#183; Compile it and run.
     <br/>
+    &#183; you need to dowload stockfish bin from zip above or official site. Make sure Path to stockfish in settings.txt correct. 
+    <br/>
     &#183; Open a chess website.
     <br/>
     &#183; Click Colibrate button then click top left point of chess board, then click bottom right point of chess board.
@@ -112,15 +114,21 @@ export default class Chess extends Component{
 
     <Link to="../file/ChessBot.zip" target="_blank" download>
       <div style={{width: this.props.wd/4, height:this.props.wd/16}}>
-      <Button color = {theme.BTMain} colorH = {theme.BTMainA} name='Download .zip' />
+      <Button color = {theme.BTMain} colorH = {theme.BTMainA} name='Download x64.zip' />
       </div>
   </Link>
       <br />
-    <Link to="https://download.visualstudio.microsoft.com/download/pr/18e13f02-1a28-4fe4-b642-6674408c3673/108e75fd84bf9153ea03ed4011252f9b/dotnet-hosting-3.0.3-win.exe" target="_blank" download>
+      <a href="https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.0.103-windows-x64-installer">
       <div style={{width: this.props.wd/4, height:this.props.wd/16}}>
-      <Button color = {theme.BTMain} colorH = {theme.BTMainA} name='Download .net runtime' />
+      <Button color = {theme.BTMain} colorH = {theme.BTMainA} name='download runtime' />
       </div>
-  </Link>
+  </a>
+  <br/>
+  <a href="https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads">
+      <div style={{width: this.props.wd/4, height:this.props.wd/16}}>
+      <Button color = {theme.BTMain} colorH = {theme.BTMainA} name='download c++ redist' />
+      </div>
+  </a>
       <br />
       {howBtn}
   {this.state.showHow&&how}
